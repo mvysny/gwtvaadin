@@ -139,7 +139,15 @@
     <dependency>
       <groupId>com.vaadin</groupId>
       <!-- Replace artifactId with vaadin-core to use only free components -->
-      <artifactId>vaadin</artifactId>
+      <artifactId>vaadin-core</artifactId>
+<!--
+      <exclusions>
+        <exclusion>
+          <groupId>net.bytebuddy</groupId>
+          <artifactId>byte-buddy</artifactId>
+        </exclusion>
+      </exclusions>
+-->
     </dependency>
     <!-- Added to provide logging output as Flow uses -->
     <!-- the unbound SLF4J no-operation (NOP) logger implementation -->
@@ -196,6 +204,13 @@
             <startupUrl>gwt.html</startupUrl>
           </startupUrls>
         </configuration>
+        <dependencies>
+          <dependency>
+            <groupId>org.eclipse.jetty.websocket</groupId>
+            <artifactId>websocket-server</artifactId>
+            <version>9.4.19.v20190610</version>
+          </dependency>
+        </dependencies>
       </plugin>
 
       <!-- Skip normal test execution, we use gwt:test instead -->
@@ -204,15 +219,6 @@
         <version>2.17</version>
         <configuration>
           <skip>true</skip>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.eclipse.jetty</groupId>
-        <artifactId>jetty-maven-plugin</artifactId>
-        <version>9.4.15.v20190215</version>
-        <configuration>
-          <scanIntervalSeconds>1</scanIntervalSeconds>
         </configuration>
       </plugin>
 
