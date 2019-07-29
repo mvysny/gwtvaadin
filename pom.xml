@@ -140,14 +140,6 @@
       <groupId>com.vaadin</groupId>
       <!-- Replace artifactId with vaadin-core to use only free components -->
       <artifactId>vaadin-core</artifactId>
-<!--
-      <exclusions>
-        <exclusion>
-          <groupId>net.bytebuddy</groupId>
-          <artifactId>byte-buddy</artifactId>
-        </exclusion>
-      </exclusions>
--->
     </dependency>
     <!-- Added to provide logging output as Flow uses -->
     <!-- the unbound SLF4J no-operation (NOP) logger implementation -->
