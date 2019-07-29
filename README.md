@@ -6,13 +6,14 @@ in the same session.
 
 ## Run the dev env
  
-In order to run this project: 
+In order to run this project you need to run the following in your terminal: 
 
-1. mvn clean package
-2. mvn gwt:codeserver
+1. `mvn clean package`
+2. `mvn gwt:codeserver`
 
 That would start the GWT in SuperDevMode. This process will
-auto-recompile and serve GWT code.
+automatically recompile your GWT java sources to javascript and serve them to
+the webpage.
 
 > Note: Do not use `mvn gwt:devmode` which will start the old DevMode
  (which requires a browser plugin which doesn't work with the newest browsers)
