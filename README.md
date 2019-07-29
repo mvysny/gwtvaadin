@@ -27,22 +27,29 @@ Edit Configurations / + / Tomcat Server / Local. Make sure that:
 `GwtTest:war exploded`
 * The Application Context is `/`
 
-Now start Tomcat in the debug mode. It should automatically open
-the GWT welcome page.
+Now start Tomcat in the debug mode. Once the Tomcat starts,
+Intellij should automatically open the GWT welcome page in your browser.
 
 ## Develop with GWT
 
 Visit http://127.0.0.1:9876/ . The page will give you an opportunity
 to bookmark two bookmarklets: `Dev Mode On` and `Dev Mode Off` - do it
-and make sure those bookmarklets are on your bookmark 
+and make sure those bookmarklets are on your bookmark toolbar in your browser.
 
-Now visit http://localhost:8080/ and press the `Dev Mode On` which
+Now visit http://localhost:8080/ and press the `Dev Mode On` which will offer you
+to recompile the GWT code in dev mode. After that's done, you can now change the
+GWT sources:
 
-1. http://localhost:8888 is gwt root
-2. http://localhost:8888/vaadin is vaadin context
+1. Open the `GwtTest` class and change the button caption from `Send TO SERVER!` to e.g.
+  `Say Hello!`.
+2. Reload the page in your browser by pressing `F5`. The button caption should change.
 
+## Develop with Vaadin
 
-## Issues
-If you encounter any case 
-java.lang.RuntimeException: ...byte-buddy-1.9.13.jar
-Please remove this jar from classpath manually and restart jety server without recompile the source.
+Visit http://localhost:8080/vaadin/categories . A list of categories should open up.
+Now, open the `CategoriesList` java class and change e.g.
+the `New category` button caption to e.g. `Create category`.
+
+In order to deploy the change, simply press Ctrl+F9. That should hot-redeploy
+the class into Tomcat which should now say `1 classes has been redeployed`.
+Now simply reload the page in the browser - the button caption should now be changed.
