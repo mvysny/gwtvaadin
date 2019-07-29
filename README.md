@@ -15,12 +15,13 @@ That would start the GWT in SuperDevMode. This process will
 automatically recompile your GWT java sources to javascript and serve them to
 the webpage.
 
-> Note: Do not use `mvn gwt:devmode` which will start the old DevMode
- (which requires a browser plugin which doesn't work with the newest browsers)
-and it will start Vaadin with old Jetty which doesn't handle Java 9 bytecode well
-will crash that it can't parse `versions/9/module-info.class` from `byte-buddy.jar`
+> Note: Do **not** use `mvn gwt:devmode` which will start the old GWT DevMode.
+Development using old GWT DevMode requires a browser plugin which doesn't work with
+any of recent browsers. GWT DevMode will also start Vaadin app with very old Jetty
+which doesn't handle Java 9 bytecode properly and will crash that it can't parse `versions/9/module-info.class` from `byte-buddy.jar`
 
-Now you need to run the server itself. Download Tomcat 9.0.22
+Now you need to run the server itself. Download any Tomcat 9.x (e.g. 9.0.22) from
+https://tomcat.apache.org/download-90.cgi
 and create a Tomcat launch configuration in your Intellij Ultimate:
 Edit Configurations / + / Tomcat Server / Local. Make sure that:
 
@@ -28,7 +29,7 @@ Edit Configurations / + / Tomcat Server / Local. Make sure that:
 `GwtTest:war exploded`
 * The Application Context is `/`
 
-Now start Tomcat in the debug mode. Once the Tomcat starts,
+Now start the newly created Tomcat launch configuration in the debug mode. Once the Tomcat starts,
 Intellij should automatically open the GWT welcome page in your browser.
 
 ## Develop with GWT
