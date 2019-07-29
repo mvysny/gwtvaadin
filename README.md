@@ -4,6 +4,12 @@ This project demoes the possibility of having both old
 GWT codebase running along with the new Vaadin 14 servlet
 in the same session.
 
+You need to have the following installed:
+
+* Java JDK, 8 or newer
+* Intellij Ultimate
+* Tomcat 9.x; for example download Tomcat 9.0.22 from https://tomcat.apache.org/download-90.cgi
+
 ## Run the dev env
  
 In order to run this project you need to run the following in your terminal: 
@@ -20,9 +26,8 @@ Development using old GWT DevMode requires a browser plugin which doesn't work w
 any of recent browsers. GWT DevMode will also start Vaadin app with very old Jetty
 which doesn't handle Java 9 bytecode properly and will crash that it can't parse `versions/9/module-info.class` from `byte-buddy.jar`
 
-Now you need to run the server itself. Download any Tomcat 9.x (e.g. 9.0.22) from
-https://tomcat.apache.org/download-90.cgi
-and create a Tomcat launch configuration in your Intellij Ultimate:
+Now you need to run the server itself. Download Tomcat as stated above, and
+create a Tomcat launch configuration in your Intellij Ultimate:
 Edit Configurations / + / Tomcat Server / Local. Make sure that:
 
 * In the launch configuration's Deployment tab the following is deployed:
