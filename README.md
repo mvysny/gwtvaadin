@@ -17,7 +17,8 @@ In order to run this project you need to run the following in your terminal:
 1. `mvn clean package`
 2. `mvn gwt:codeserver`
 
-That would start the GWT in SuperDevMode. This process will
+That would start the GWT CodeServer which allows you to develop GWT-based apps
+in SuperDevMode. The CodeServer will
 automatically recompile your GWT java sources to javascript and serve them to
 the webpage.
 
