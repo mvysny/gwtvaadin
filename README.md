@@ -27,19 +27,36 @@ Development using old GWT DevMode requires a browser plugin which doesn't work w
 any of recent browsers. GWT DevMode will also start Vaadin app with very old Jetty
 which doesn't handle Java 9 bytecode properly and will crash that it can't parse `versions/9/module-info.class` from `byte-buddy.jar`
 
-Now you need to run the server itself. Download Tomcat as stated above, and
-create a Tomcat launch configuration in your Intellij Ultimate:
-Edit Configurations / + / Tomcat Server / Local. Make sure that:
+The codeserver doesn't serve your server-side webapp (so for example it wont't serve GWT RPCs,
+and it won't serve Vaadin-related stuff).
+Therefore we need to run the webapp itself. Keep the CodeServer running, and we'll
+run the webapp in Tomcat.
 
-* In the launch configuration's Deployment tab the following is deployed:
+Download Tomcat as stated above, and
+create a Tomcat launch configuration in your Intellij Ultimate. The very short
+instructions are: open Edit Configurations, click the upper-left `+` button,
+Tomcat Server / Local. In the newly created Tomcat launch configuration make sure that:
+
+* In the `Deployment` tab the following is deployed:
 `GwtTest:war exploded`
 * The Application Context is `/`
+* In the `Server` tab make sure that Tomcat is selected as Application Server. If not,
+press the "Configure..." button.
+* Name the launch configuration as e.g. "Tomcat"
 
 > Tip: There is [Youtube video which will guide you through the process of
-installing Tomcat](https://www.youtube.com/watch?v=M0Q7D03bYXc&t=10s).
+installing Tomcat into Intellij Ultimate](https://www.youtube.com/watch?v=M0Q7D03bYXc&t=10s).
 
-Now start the newly created Tomcat launch configuration in the debug mode. Once the Tomcat starts,
-Intellij should automatically open the GWT welcome page in your browser.
+> Note: Make sure you have Intellij Ultimate. Intellij Community doesn't support launching
+your app in Tomcat.
+
+Now start the newly created Tomcat launch configuration in the debug mode:
+* Make sure that the Tomcat launch configuration is selected in the launch configuration combo box
+* Press the green 'bug' button to the right of the 'launch configuration' combo box.
+ 
+Once the Tomcat starts,
+Intellij should automatically open the GWT welcome page in your browser. Test that
+everything works and the GWT button responds to clicks.
 
 ## Develop with GWT
 
