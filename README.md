@@ -46,9 +46,17 @@ Visit http://127.0.0.1:9876/ . The page will give you an opportunity
 to bookmark two bookmarklets: `Dev Mode On` and `Dev Mode Off` - do it
 and make sure those bookmarklets are on your bookmark toolbar in your browser.
 
-Now visit http://localhost:8080/ and while on this page, press the `Dev Mode On` button
-in your bookmark toolbar which you have bookmarked earlier. That will offer you
-to recompile the GWT code on the current page in dev mode. After that's done, you can now change the
+Now visit http://localhost:8080/ and while on this page, press the `Dev Mode On` bookmarklet button
+in your bookmark toolbar which you have bookmarked earlier.
+
+> Explanation: The bookmarklet is not
+an URL but it's actually a JavaScript code which will process current page, discover any
+GWT modules and modify links so that the GWT modules are served from the code-server
+from http://127.0.0.1:9876/ as opposed from pre-compiled from your WAR.
+The code-server will in turn monitor your GWT java sources and recompile them on-the-fly.
+
+After you press `Dev Mode On`, select your GWT module to recompile the
+GWT code on the current page in dev mode. After that's done, you can now change the
 GWT sources:
 
 1. Open the `GwtTest` class and change the button caption from `Send TO SERVER!` to e.g.
