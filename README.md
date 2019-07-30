@@ -64,3 +64,9 @@ the `New category` button caption to e.g. `Create category`.
 In order to deploy the change, simply press Ctrl+F9. That should hot-redeploy
 the class into Tomcat which should now say `1 classes has been redeployed`.
 Now simply reload the page in the browser - the button caption should now be changed.
+
+> Tip: Sometimes the hot-redeployment stops working. Then simply press
+Ctrl+F10 and select "Restart Server" - that should restart Tomcat with the
+new code. You can also experiment with other options: "Update resources"
+should update your non-java files such as CSS, HTML and others;
+"Update classes and resources" should also hot-redeploy all changes.
