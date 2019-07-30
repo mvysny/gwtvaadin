@@ -34,6 +34,9 @@ Edit Configurations / + / Tomcat Server / Local. Make sure that:
 `GwtTest:war exploded`
 * The Application Context is `/`
 
+> Tip: There is [Youtube video which will guide you through the process of
+installing Tomcat](https://www.youtube.com/watch?v=M0Q7D03bYXc&t=10s).
+
 Now start the newly created Tomcat launch configuration in the debug mode. Once the Tomcat starts,
 Intellij should automatically open the GWT welcome page in your browser.
 
