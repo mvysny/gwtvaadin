@@ -22,6 +22,10 @@ in SuperDevMode. The CodeServer will
 automatically recompile your GWT java sources to javascript and serve them to
 the webpage.
 
+The CodeServer will discover all of your `*.gwt.xml` files in your project and
+it will compile all java files mentioned in the `<source path='...'/>` elements.
+The compiled code then runs client-side in the browser.
+
 > Note: Do **not** use `mvn gwt:devmode` which will start the old GWT DevMode.
 Development using old GWT DevMode requires a browser plugin which doesn't work with
 any of recent browsers. GWT DevMode will also start Vaadin app with very old Jetty
